@@ -2,18 +2,22 @@ package com.example.apptonghop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class MainFood extends AppCompatActivity {
-    GridView gvFood;
+
     ListView lvFood;
-    ArrayList<Gridview_Food> arrayGridFood;
+
     ArrayList<Food> arrayFood;
     FoodAdapter adapter;
+
 
 
     @Override
@@ -24,8 +28,6 @@ public class MainFood extends AppCompatActivity {
         AnhXa();
         adapter = new FoodAdapter(this,R.layout.dong_food,arrayFood);
         lvFood.setAdapter(adapter);
-
-
 
     }
 
@@ -42,6 +44,23 @@ public class MainFood extends AppCompatActivity {
         arrayFood.add(new Food("Pizza","8.4",R.drawable.pizza));
         arrayFood.add(new Food("french fries","4.4",R.drawable.frenchfries));
         arrayFood.add(new Food("Cafe","3.2",R.drawable.cafe));
-    }
 
+
+        lvFood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Food fr = arrayFood.get(i);
+                doOpenMainActivity(fr.getTen(),fr.getMota(),fr.getHinh());
+            }
+        });
+    }
+    public void doOpenMainActivity(String ten, String mota, int hinh)
+    {
+        Intent myIntent;
+        myIntent = new Intent( this, Detail.class);
+        myIntent.putExtra("title",ten);
+        myIntent.putExtra("des",mota);
+        myIntent.putExtra("image",hinh);
+        startActivity(myIntent);
+    }
 }

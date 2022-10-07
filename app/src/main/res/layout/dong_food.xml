@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
 
     <ImageView
@@ -39,14 +40,15 @@
         android:text="Mota"
         android:textSize="20dp" />
 
-    <Button
-        android:background="@drawable/icon_giohang"
+    <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="6dp" />
+        android:layout_marginEnd="6dp"
+        android:background="@drawable/icon_giohang" />
+
 
     <ImageView
         android:layout_width="21dp"
@@ -67,5 +69,6 @@
         android:layout_marginTop="124dp"
         android:layout_marginEnd="2dp"
         android:background="@drawable/line_list" />
+
 
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.apptonghop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,8 +19,13 @@ public class Profile extends AppCompatActivity {
         btLognout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                doOpenSignActivity();
             }
         });
+
+    }
+    private void doOpenSignActivity(){
+        Intent myIntent = new Intent(this, sign_up.class);
+        startActivity(myIntent);
     }
 }
