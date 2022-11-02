@@ -10,6 +10,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class MainFood extends AppCompatActivity {
 
@@ -24,6 +25,7 @@ public class MainFood extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_food);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         AnhXa();
         adapter = new FoodAdapter(this,R.layout.dong_food,arrayFood);
@@ -31,9 +33,12 @@ public class MainFood extends AppCompatActivity {
 
     }
 
+
+
     private void AnhXa() {
         lvFood = findViewById(R.id.listviewFood);
         arrayFood = new ArrayList<>();
+
 
 
         arrayFood.add(new Food("Hamburger","4.3",R.drawable.burger));

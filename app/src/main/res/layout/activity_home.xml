@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".Home"
     android:id="@+id/drawer_layout"
+    tools:openDrawer="start">
     >
 
 
@@ -15,7 +16,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/backhround_home"
     >
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -73,35 +73,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/Bt_ActivityProfile"
-        android:layout_width="128dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginBottom="44dp"
-        android:background="@drawable/custom_bt_home"
-        android:fontFamily="@font/breeserif"
-        android:text="Profile"
-        android:textAllCaps="false"
-        android:textSize="30dp"
-        android:textStyle="italic|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/Bt_ActivityList"
-        android:layout_width="128dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="44dp"
-        android:background="@drawable/custom_bt_home"
-        android:fontFamily="@font/breeserif"
-        android:text="List"
-        android:textAllCaps="false"
-        android:textSize="30dp"
-        android:textStyle="italic|bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

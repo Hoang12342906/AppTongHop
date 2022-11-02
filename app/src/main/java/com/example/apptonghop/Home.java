@@ -24,7 +24,7 @@ public class Home extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    Toolbar toolbar;
+    Toolbar toolbar1;
     ActionBarDrawerToggle actionBarDrawerToggle;
 
     @Override
@@ -33,7 +33,6 @@ public class Home extends AppCompatActivity {
 
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -43,16 +42,15 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.navigationView);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.menu_open,R.string.menu_close);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-       
+
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -74,26 +72,12 @@ public class Home extends AppCompatActivity {
                         doOpenLogoutActivity();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+                    case R.id.nav_listRv:
+                        doOpenRvActivity();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                 }
                 return true;
-            }
-        });
-
-
-        Button btprofile = (Button) findViewById(R.id.Bt_ActivityProfile);
-        Button btlist =(Button) findViewById(R.id.Bt_ActivityList);
-
-        btprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                doOpenprofileActivity();
-            }
-        });
-
-        btlist.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                doOpenListActivity();
             }
         });
 
@@ -110,4 +94,9 @@ public class Home extends AppCompatActivity {
         Intent myIntent = new Intent(this, sign_up.class);
         startActivity(myIntent);
     }
+    private void doOpenRvActivity(){
+        Intent myIntent = new Intent(this, RecyclerViewUsers.class);
+        startActivity(myIntent);
+    }
+
 }
